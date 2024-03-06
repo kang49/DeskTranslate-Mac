@@ -1,4 +1,5 @@
 import json
+import glob
 
 import pytesseract
 from PIL import ImageGrab, ImageOps
@@ -10,7 +11,7 @@ from deep_translator import (GoogleTranslator,
                              LingueeTranslator)
 import pyautogui
 
-pytesseract.pytesseract.tesseract_cmd = r'/opt/homebrew/Cellar/tesseract/5.3.2/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd = glob.glob(r'/opt/homebrew/Cellar/tesseract/5.*.*/bin/tesseract')[0]
 locales = open('languageLists/locales.json', 'r')
 locales_json = json.load(locales)
 locales.close()
