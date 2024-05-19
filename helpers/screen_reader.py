@@ -12,6 +12,7 @@ from deep_translator import (GoogleTranslator,
                              LingueeTranslator)
 import pyautogui
 
+pytesseract.pytesseract.tesseract_cmd = glob.glob(r'/opt/homebrew/Cellar/tesseract/5.*.*/bin/tesseract')[0]
 locales = open('languageLists/locales.json', 'r')
 locales_json = json.load(locales)
 locales.close()
